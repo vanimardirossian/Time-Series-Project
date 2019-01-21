@@ -1,0 +1,5 @@
+"0","ShapiroWilk <- c(P.ValueM1, P.ValueM2, P.ValueM3, P.ValueM4, P.ValueM5)"
+"0","ShapiroWilk <- t(as.matrix(ShapiroWilk))"
+"0","rownames(ShapiroWilk) <- 'Shapiro Wilk Normality Test (P-Values)'"
+"0","colnames(ShapiroWilk) <- c('Model 1','Model 2','Model 3','Model 4','Model 5')"
+"0","kable(ShapiroWilk)"

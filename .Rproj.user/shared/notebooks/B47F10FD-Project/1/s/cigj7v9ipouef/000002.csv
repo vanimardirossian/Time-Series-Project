@@ -1,0 +1,907 @@
+"0","library(readr)"
+"0","library(readxl)"
+"0","library(tseries)"
+"2","
+    ‘tseries’ version: 0.10-46
+
+    ‘tseries’ is a package for time series analysis and computational finance.
+
+    See ‘library(help=""tseries"")’ for details.
+
+"
+"0","library(forecast)"
+"2","This is forecast 8.4 
+  Use suppressPackageStartupMessages() to eliminate package startup messages.
+"
+"0","library(reshape)"
+"0","library(astsa)"
+"2","
+Attaching package: ‘astsa’
+
+"
+"2","The following object is masked from ‘package:forecast’:
+
+    gas
+
+"
+"0","library(caschrono)"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"0","library(urca)"
+"0","library(car)"
+"2","Loading required package: carData
+"
+"0","library(knitr)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    recode
+
+"
+"2","The following object is masked from ‘package:reshape’:
+
+    rename
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(pastecs)"
+"2","
+Attaching package: ‘pastecs’
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    first, last
+
+"
+"2","The following object is masked from ‘package:texreg’:
+
+    extract
+
+"
+"0","library(knitr)"
+"0","library(extrafont)"
+"2","Registering fonts with R
+"
+"0","font_import(pattern = 'lmodern*', prompt = FALSE, paths = '/home/vani/Documents/AUA/Special Topics/Group Project')"
+"2","Scanning ttf files in /home/vani/Documents/AUA/Special Topics/Group Project ...
+"
+"2","Extracting .afm files from .ttf files...
+"
+"2","/home/vani/Documents/AUA/Special Topics/Group Project/lmodern.ttf"
+"2"," : LMRoman10-Regular already registered in fonts database. Skipping.
+"
+"2","Found FontName for 0 fonts.
+"
+"2","Scanning afm files in /home/vani/R/x86_64-pc-linux-gnu-library/3.4/extrafontdb/metrics
+"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 8 is invalid in this locale"
+"2","input string 8 is invalid in this locale"
+"2","input string 8 is invalid in this locale"
+"2","input string 8 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"2","input string 4 is invalid in this locale"
+"0","loadfonts(device = ""pdf"")"
+"2","aakar already registered with pdfFonts().
+"
+"2","Abyssinica SIL already registered with pdfFonts().
+"
+"2","Amiri already registered with pdfFonts().
+"
+"2","Amiri Quran already registered with pdfFonts().
+"
+"2","Amiri Quran Colored already registered with pdfFonts().
+"
+"2","Ani already registered with pdfFonts().
+"
+"2","AnjaliOldLipi already registered with pdfFonts().
+"
+"2","Arimo already registered with pdfFonts().
+"
+"2","Baekmuk Batang already registered with pdfFonts().
+"
+"2","Baekmuk Dotum already registered with pdfFonts().
+"
+"2","Baekmuk Gulim already registered with pdfFonts().
+"
+"2","Baekmuk Headline already registered with pdfFonts().
+"
+"2","AR PL SungtiL GB already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Caladea. Skipping setup for this font.
+"
+"2","Carlito already registered with pdfFonts().
+"
+"2","Chandas already registered with pdfFonts().
+"
+"2","Chilanka already registered with pdfFonts().
+"
+"2","Comfortaa already registered with pdfFonts().
+"
+"2","Comfortaa Light already registered with pdfFonts().
+"
+"2","Cousine already registered with pdfFonts().
+"
+"2","DejaVu Math TeX Gyre already registered with pdfFonts().
+"
+"2","DejaVu Sans already registered with pdfFonts().
+"
+"2","DejaVu Sans Light already registered with pdfFonts().
+"
+"2","DejaVu Sans Condensed already registered with pdfFonts().
+"
+"2","DejaVu Sans Mono already registered with pdfFonts().
+"
+"2","DejaVu Serif already registered with pdfFonts().
+"
+"2","DejaVu Serif Condensed already registered with pdfFonts().
+"
+"2","Droid Sans Fallback already registered with pdfFonts().
+"
+"2","Dyuthi already registered with pdfFonts().
+"
+"2","EB Garamond 08 already registered with pdfFonts().
+"
+"2","EB Garamond 12 All SC already registered with pdfFonts().
+"
+"2","No regular (non-bold, non-italic) version of EB Garamond 12. Skipping setup for this font.
+"
+"2","EB Garamond Initials Fill1 already registered with pdfFonts().
+"
+"2","EB Garamond Initials Fill2 already registered with pdfFonts().
+"
+"2","EB Garamond SC 08 already registered with pdfFonts().
+"
+"2","EB Garamond SC 12 already registered with pdfFonts().
+"
+"2","FontAwesome already registered with pdfFonts().
+"
+"2","FreeMono already registered with pdfFonts().
+"
+"2","FreeSans already registered with pdfFonts().
+"
+"2","FreeSerif already registered with pdfFonts().
+"
+"2","Gargi already registered with pdfFonts().
+"
+"2","Garuda already registered with pdfFonts().
+"
+"2","AR PL KaitiM GB already registered with pdfFonts().
+"
+"2","Gentium already registered with pdfFonts().
+"
+"2","GentiumAlt already registered with pdfFonts().
+"
+"2","Gentium Basic already registered with pdfFonts().
+"
+"2","Gentium Book Basic already registered with pdfFonts().
+"
+"2","Gentium Plus already registered with pdfFonts().
+"
+"2","Gentium Plus Compact already registered with pdfFonts().
+"
+"2","Go already registered with pdfFonts().
+"
+"2","Go Medium already registered with pdfFonts().
+"
+"2","Go Mono already registered with pdfFonts().
+"
+"2","Gubbi already registered with pdfFonts().
+"
+"2","IPAexGothic already registered with pdfFonts().
+"
+"2","IPAexMincho already registered with pdfFonts().
+"
+"2","IPAGothic already registered with pdfFonts().
+"
+"2","IPAMincho already registered with pdfFonts().
+"
+"2","IPAPGothic already registered with pdfFonts().
+"
+"2","IPAPMincho already registered with pdfFonts().
+"
+"2","Jamrul already registered with pdfFonts().
+"
+"2","Junicode already registered with pdfFonts().
+"
+"2","KacstArt already registered with pdfFonts().
+"
+"2","KacstBook already registered with pdfFonts().
+"
+"2","KacstDecorative already registered with pdfFonts().
+"
+"2","KacstDigital already registered with pdfFonts().
+"
+"2","KacstFarsi already registered with pdfFonts().
+"
+"2","KacstLetter already registered with pdfFonts().
+"
+"2","KacstNaskh already registered with pdfFonts().
+"
+"2","KacstOffice already registered with pdfFonts().
+"
+"2","KacstOne already registered with pdfFonts().
+"
+"2","KacstPen already registered with pdfFonts().
+"
+"2","KacstPoster already registered with pdfFonts().
+"
+"2","KacstQurn already registered with pdfFonts().
+"
+"2","KacstScreen already registered with pdfFonts().
+"
+"2","KacstTitle already registered with pdfFonts().
+"
+"2","KacstTitleL already registered with pdfFonts().
+"
+"2","Kalapi already registered with pdfFonts().
+"
+"2","Kalimati already registered with pdfFonts().
+"
+"2","Karumbi already registered with pdfFonts().
+"
+"2","No regular (non-bold, non-italic) version of Keraleeyam. Skipping setup for this font.
+"
+"2","Khmer OS already registered with pdfFonts().
+"
+"2","Khmer OS System already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Kinnari. Skipping setup for this font.
+"
+"2","Laksaman already registered with pdfFonts().
+"
+"2","Lato Black already registered with pdfFonts().
+"
+"2","Lato already registered with pdfFonts().
+"
+"2","Lato Hairline already registered with pdfFonts().
+"
+"2","Lato Heavy already registered with pdfFonts().
+"
+"2","Lato Light already registered with pdfFonts().
+"
+"2","Lato Medium already registered with pdfFonts().
+"
+"2","Lato Semibold already registered with pdfFonts().
+"
+"2","Lato Thin already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Liberation Mono. Skipping setup for this font.
+"
+"2","More than one version of regular/bold/italic found for Liberation Sans. Skipping setup for this font.
+"
+"2","Liberation Sans Narrow already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Liberation Serif. Skipping setup for this font.
+"
+"2","Likhan already registered with pdfFonts().
+"
+"2","LKLUG already registered with pdfFonts().
+"
+"2","Lohit Assamese already registered with pdfFonts().
+"
+"2","Lohit Bengali already registered with pdfFonts().
+"
+"2","Lohit Devanagari already registered with pdfFonts().
+"
+"2","Lohit Gujarati already registered with pdfFonts().
+"
+"2","Lohit Gurmukhi already registered with pdfFonts().
+"
+"2","Lohit Kannada already registered with pdfFonts().
+"
+"2","Lohit Malayalam already registered with pdfFonts().
+"
+"2","Lohit Odia already registered with pdfFonts().
+"
+"2","Lohit Tamil already registered with pdfFonts().
+"
+"2","Lohit Tamil Classical already registered with pdfFonts().
+"
+"2","Lohit Telugu already registered with pdfFonts().
+"
+"2","Loma already registered with pdfFonts().
+"
+"2","Meera already registered with pdfFonts().
+"
+"2","Mitra Mono already registered with pdfFonts().
+"
+"2","mry_KacstQurn already registered with pdfFonts().
+"
+"2","Mukti Narrow already registered with pdfFonts().
+"
+"2","Nakula already registered with pdfFonts().
+"
+"2","Navilu already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Norasi. Skipping setup for this font.
+"
+"2","Noto Kufi Arabic already registered with pdfFonts().
+"
+"2","Noto Mono already registered with pdfFonts().
+"
+"2","Noto Naskh Arabic already registered with pdfFonts().
+"
+"2","Noto Naskh Arabic UI already registered with pdfFonts().
+"
+"2","Noto Sans already registered with pdfFonts().
+"
+"2","Noto Sans Adlam already registered with pdfFonts().
+"
+"2","Noto Sans Adlam Unjoined already registered with pdfFonts().
+"
+"2","Noto Sans Arabic already registered with pdfFonts().
+"
+"2","Noto Sans Arabic UI already registered with pdfFonts().
+"
+"2","Noto Sans Armenian already registered with pdfFonts().
+"
+"2","Noto Sans Avestan already registered with pdfFonts().
+"
+"2","Noto Sans Bamum already registered with pdfFonts().
+"
+"2","Noto Sans Bengali already registered with pdfFonts().
+"
+"2","Noto Sans Bengali UI already registered with pdfFonts().
+"
+"2","Noto Sans Buhid already registered with pdfFonts().
+"
+"2","Noto Sans Carian already registered with pdfFonts().
+"
+"2","Noto Sans Chakma already registered with pdfFonts().
+"
+"2","Noto Sans Cherokee already registered with pdfFonts().
+"
+"2","Noto Sans Cypriot already registered with pdfFonts().
+"
+"2","Noto Sans Deseret already registered with pdfFonts().
+"
+"2","Noto Sans Devanagari already registered with pdfFonts().
+"
+"2","Noto Sans Devanagari UI already registered with pdfFonts().
+"
+"2","Noto Sans Disp already registered with pdfFonts().
+"
+"2","Noto Sans Ethiopic already registered with pdfFonts().
+"
+"2","Noto Sans Georgian already registered with pdfFonts().
+"
+"2","Noto Sans Glagolitic already registered with pdfFonts().
+"
+"2","Noto Sans Gothic already registered with pdfFonts().
+"
+"2","Noto Sans Gujarati already registered with pdfFonts().
+"
+"2","Noto Sans Gujarati UI already registered with pdfFonts().
+"
+"2","Noto Sans Gurmukhi already registered with pdfFonts().
+"
+"2","Noto Sans Gurmukhi UI already registered with pdfFonts().
+"
+"2","Noto Sans Hebrew already registered with pdfFonts().
+"
+"2","Noto Sans Kannada already registered with pdfFonts().
+"
+"2","Noto Sans Kannada UI already registered with pdfFonts().
+"
+"2","Noto Sans Kayah Li already registered with pdfFonts().
+"
+"2","Noto Sans Khmer already registered with pdfFonts().
+"
+"2","Noto Sans Khmer UI already registered with pdfFonts().
+"
+"2","Noto Sans Lao already registered with pdfFonts().
+"
+"2","Noto Sans Lao UI already registered with pdfFonts().
+"
+"2","Noto Sans Lisu already registered with pdfFonts().
+"
+"2","Noto Sans Malayalam already registered with pdfFonts().
+"
+"2","Noto Sans Malayalam UI already registered with pdfFonts().
+"
+"2","Noto Sans Mandaic already registered with pdfFonts().
+"
+"2","Noto Sans Mono already registered with pdfFonts().
+"
+"2","Noto Sans Myanmar already registered with pdfFonts().
+"
+"2","Noto Sans Myanmar UI already registered with pdfFonts().
+"
+"2","Noto Sans N'Ko already registered with pdfFonts().
+"
+"2","Noto Sans Ol Chiki already registered with pdfFonts().
+"
+"2","Noto Sans Old Turkic already registered with pdfFonts().
+"
+"2","Noto Sans Oriya already registered with pdfFonts().
+"
+"2","Noto Sans Oriya UI already registered with pdfFonts().
+"
+"2","Noto Sans Osage already registered with pdfFonts().
+"
+"2","Noto Sans Osmanya already registered with pdfFonts().
+"
+"2","Noto Sans Shavian already registered with pdfFonts().
+"
+"2","Noto Sans Sinhala already registered with pdfFonts().
+"
+"2","Noto Sans Sinhala UI already registered with pdfFonts().
+"
+"2","Noto Sans Symbols already registered with pdfFonts().
+"
+"2","Noto Sans Tamil already registered with pdfFonts().
+"
+"2","Noto Sans Tamil UI already registered with pdfFonts().
+"
+"2","Noto Sans Telugu already registered with pdfFonts().
+"
+"2","Noto Sans Telugu UI already registered with pdfFonts().
+"
+"2","Noto Sans Thaana already registered with pdfFonts().
+"
+"2","Noto Sans Thai already registered with pdfFonts().
+"
+"2","Noto Sans Thai UI already registered with pdfFonts().
+"
+"2","Noto Sans Tibetan already registered with pdfFonts().
+"
+"2","Noto Sans Tifinagh already registered with pdfFonts().
+"
+"2","Noto Sans Vai already registered with pdfFonts().
+"
+"2","Noto Serif already registered with pdfFonts().
+"
+"2","Noto Serif Armenian already registered with pdfFonts().
+"
+"2","Noto Serif Bengali already registered with pdfFonts().
+"
+"2","Noto Serif Devanagari already registered with pdfFonts().
+"
+"2","Noto Serif Disp already registered with pdfFonts().
+"
+"2","Noto Serif Ethiopic already registered with pdfFonts().
+"
+"2","Noto Serif Georgian already registered with pdfFonts().
+"
+"2","Noto Serif Gujarati already registered with pdfFonts().
+"
+"2","Noto Serif Hebrew already registered with pdfFonts().
+"
+"2","Noto Serif Kannada already registered with pdfFonts().
+"
+"2","Noto Serif Khmer already registered with pdfFonts().
+"
+"2","Noto Serif Lao already registered with pdfFonts().
+"
+"2","Noto Serif Malayalam already registered with pdfFonts().
+"
+"2","Noto Serif Myanmar already registered with pdfFonts().
+"
+"2","Noto Serif Sinhala already registered with pdfFonts().
+"
+"2","Noto Serif Tamil already registered with pdfFonts().
+"
+"2","Noto Serif Telugu already registered with pdfFonts().
+"
+"2","Noto Serif Thai already registered with pdfFonts().
+"
+"2","Open Sans already registered with pdfFonts().
+"
+"2","No regular (non-bold, non-italic) version of Open Sans Condensed. Skipping setup for this font.
+"
+"2","Open Sans Condensed Light already registered with pdfFonts().
+"
+"2","Open Sans Extrabold already registered with pdfFonts().
+"
+"2","Open Sans Light already registered with pdfFonts().
+"
+"2","Open Sans Semibold already registered with pdfFonts().
+"
+"2","OpenSymbol already registered with pdfFonts().
+"
+"2","Padauk already registered with pdfFonts().
+"
+"2","Padauk Book already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for padmaa. Skipping setup for this font.
+"
+"2","No regular (non-bold, non-italic) version of padmaa-Bold.1.1. Skipping setup for this font.
+"
+"2","Pagul already registered with pdfFonts().
+"
+"2","Phetsarath OT already registered with pdfFonts().
+"
+"2","Pothana2000 already registered with pdfFonts().
+"
+"2","Purisa already registered with pdfFonts().
+"
+"2","Rachana already registered with pdfFonts().
+"
+"2","RaghuMalayalam already registered with pdfFonts().
+"
+"2","Rekha already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Roboto. Skipping setup for this font.
+"
+"2","More than one version of regular/bold/italic found for Roboto Condensed. Skipping setup for this font.
+"
+"2","Saab already registered with pdfFonts().
+"
+"2","Sahadeva already registered with pdfFonts().
+"
+"2","Samanata already registered with pdfFonts().
+"
+"2","Samyak Devanagari already registered with pdfFonts().
+"
+"2","Samyak Gujarati already registered with pdfFonts().
+"
+"2","Samyak Malayalam already registered with pdfFonts().
+"
+"2","Samyak Tamil already registered with pdfFonts().
+"
+"2","Sarai already registered with pdfFonts().
+"
+"2","Sawasdee already registered with pdfFonts().
+"
+"2","AR PL Mingti2L Big5 already registered with pdfFonts().
+"
+"2","Suruma already registered with pdfFonts().
+"
+"2","Tibetan Machine Uni already registered with pdfFonts().
+"
+"2","Tinos already registered with pdfFonts().
+"
+"2","TlwgMono already registered with pdfFonts().
+"
+"2","TlwgTypewriter already registered with pdfFonts().
+"
+"2","Tlwg Typist already registered with pdfFonts().
+"
+"2","Tlwg Typo already registered with pdfFonts().
+"
+"2","Ubuntu already registered with pdfFonts().
+"
+"2","Ubuntu Light already registered with pdfFonts().
+"
+"2","Ubuntu Condensed already registered with pdfFonts().
+"
+"2","Ubuntu Mono already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for Umpush. Skipping setup for this font.
+"
+"2","UnBatang already registered with pdfFonts().
+"
+"2","More than one version of regular/bold/italic found for UnDinaru. Skipping setup for this font.
+"
+"2","UnDotum already registered with pdfFonts().
+"
+"2","UnGraphic already registered with pdfFonts().
+"
+"2","UnGungseo already registered with pdfFonts().
+"
+"2","UnJamoBatang already registered with pdfFonts().
+"
+"2","UnJamoDotum already registered with pdfFonts().
+"
+"2","UnJamoNovel already registered with pdfFonts().
+"
+"2","UnJamoSora already registered with pdfFonts().
+"
+"2","UnPen already registered with pdfFonts().
+"
+"2","UnPenheulim already registered with pdfFonts().
+"
+"2","UnPilgi already registered with pdfFonts().
+"
+"2","UnPilgia already registered with pdfFonts().
+"
+"2","UnShinmun already registered with pdfFonts().
+"
+"2","UnTaza already registered with pdfFonts().
+"
+"2","UnVada already registered with pdfFonts().
+"
+"2","No regular (non-bold, non-italic) version of UnYetgul. Skipping setup for this font.
+"
+"2","No regular (non-bold, non-italic) version of Uroob. Skipping setup for this font.
+"
+"2","utkal already registered with pdfFonts().
+"
+"2","Vemana2000 already registered with pdfFonts().
+"
+"2","Waree already registered with pdfFonts().
+"
+"2","AR PL KaitiM Big5 already registered with pdfFonts().
+"
+"2","LM Roman 10 already registered with pdfFonts().
+"
+"0","options(scipen = 999)"
+"0","data<-read.csv(""Data.csv"")"
+"0","data <- data[,c(2,18,21,22,23,24)]"
+"0","StatTable<- stat.desc(data)"
+"0","data$Armenia <- log(data$Armenia/lag(data$Armenia,n=4))"
+"0","data$Russia <- log(data$Russia/lag(data$Russia, n=4))"
+"0","data$PartnerGDP <- log(data$PartnerGDP/lag(data$PartnerGDP, n=4))"
+"0","data$CrudeOil <- log(data$CrudeOil/lag(data$CrudeOil, n=4))"
+"0","data$NaturalGas <- log(data$NaturalGas/lag(data$NaturalGas, n=4))"
+"0","data$Remittances <- log(data$Remittances/lag(data$Remittances, n=4))"
+"0","data <- data[-c(1:4),]"
+"0","DataTS <- ts(data)"
+"0","forCorr <- data[,c('Armenia','Russia','PartnerGDP','CrudeOil','NaturalGas','Remittances')]"
+"0","CorrMatrix<-cor(forCorr)"
+"0","ArmTS <- ts(data$Armenia, start = 2000, frequency = 4)"
+"0","RusTS <- ts(data$Russia, start = 2000, frequency = 4)"
+"0","PartnerTS <- ts(data$PartnerGDP, start = 2000, frequency = 4)"
+"0","OilTS <- ts(data$CrudeOil, start = 2000, frequency = 4)"
+"0","GasTS <- ts(data$NaturalGas, start = 2000, frequency = 4)"
+"0","RemittancesTS <- ts(data$Remittances, start = 2000, frequency = 4)"
+"0","ArmDF <-ur.df(ArmTS, type = 'trend')"
+"0","ArmDFCval <- t(ArmDF@cval)[2,]"
+"0","Arm.Stat <- ArmDF@teststat"
+"0","rownames(Arm.Stat) <- 'Armenia Test Statistic'"
+"0","PartnerDF <-ur.df(PartnerTS, type = 'drift')"
+"0","PartnerDFCval <- t(PartnerDF@cval)[2,]"
+"0","Partner.Stat <- PartnerDF@teststat"
+"0","rownames(Partner.Stat) <- 'Partner Test Statistic'"
+"0","OilDF <-ur.df(OilTS, type = 'trend')"
+"0","OilDFCval <- t(OilDF@cval)[2,]"
+"0","Oil.Stat <- OilDF@teststat"
+"0","rownames(Oil.Stat) <- 'Oil Test Statistic'"
+"0","GasDF <-ur.df(GasTS, type = 'trend')"
+"0","GasDFCval <- t(GasDF@cval)[2,]"
+"0","Gas.Stat <- GasDF@teststat"
+"0","rownames(Gas.Stat) <- 'Gas Test Statistic'"
+"0","RemDF <-ur.df(GasTS, type = 'trend')"
+"0","RemDFCval <- t(RemDF@cval)[2,]"
+"0","Rem.Stat <- RemDF@teststat"
+"0","rownames(Rem.Stat) <- 'Remittances Test Statistic'"
+"0","ArmDFL2 <-ur.df(ArmTS, lags = 2, type = 'trend')"
+"0","ArmDFCvalL2 <- t(ArmDFL2@cval)[2,]"
+"0","Arm.StatL2 <- ArmDFL2@teststat"
+"0","rownames(Arm.StatL2) <- 'Armenia Test Statistic (Lag 2)'"
+"0","xReg1<-matrix(c(PartnerTS,GasTS),ncol=2,byrow = F, dimnames = list(1:68,c('PartnerTS','GasTS')))"
+"0","xReg2<-matrix(c(PartnerTS,OilTS),ncol=2,byrow = F, dimnames = list(1:68,c('PartnerTS','OilTS')))"
+"0","xReg3<-matrix(c(PartnerTS,OilTS,GasTS),ncol=3,byrow = F, dimnames = list(1:68,c('PartnerTS','OilTS','GasTS')))"
+"0","xReg4<-matrix(c(PartnerTS,OilTS,GasTS,RemittancesTS),ncol=4,byrow = F, dimnames = list(1:68,c('PartnerTS','OilTS','GasTS','RemittancesTS')))"
+"0","M1<-arima(ArmTS, order=c(2,0,1))"
+"0","M1SW <- shapiro.test(M1$residuals)"
+"0","P.ValueM1 <- M1SW$p.value"
+"0","M2<-arima(ArmTS, order=c(2,0,3), xreg = PartnerTS)"
+"0","M2SW <- shapiro.test(M2$residuals)"
+"0","P.ValueM2 <- M2SW$p.value"
+"0","M3<-arima(ArmTS, order=c(2,0,2), xreg = xReg1)"
+"0","M3SW <- shapiro.test(M3$residuals)"
+"0","P.ValueM3 <- M3SW$p.value"
+"0","M4<-arima(ArmTS, order=c(1,0,1), xreg = xReg2)"
+"0","M4SW <- shapiro.test(M4$residuals)"
+"0","P.ValueM4 <- M4SW$p.value"
+"0","M5<-arima(ArmTS, order=c(2,0,1), xreg = xReg3)"
+"0","M5SW <- shapiro.test(M5$residuals)"
+"0","P.ValueM5 <- M5SW$p.value"
+"0","M6<-arima(ArmTS, order=c(3,0,1), xreg = xReg4)"
+"0","M6SW <- shapiro.test(M6$residuals)"
+"0","P.ValueM6 <- M6SW$p.value"
+"0","M3LH <- linearHypothesis(M3, c('PartnerTS=0','GasTS=0'))"
+"0","M4LH <- linearHypothesis(M4, c('PartnerTS=0','OilTS=0'))"
+"0","M5LH <- linearHypothesis(M5, c('PartnerTS=0','OilTS=0','GasTS=0'))"
+"0","M6LH.1 <- linearHypothesis(M6, c('PartnerTS=0', 'RemittancesTS=0'))"
+"0","M6LH <- linearHypothesis(M6, c('PartnerTS=0','OilTS=0','GasTS=0'))"
+"0","P.ValueM3LH <- M3LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM4LH <- M4LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM5LH <- M5LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM6LH <- M6LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM6LH.1 <- M6LH.1$`Pr(>Chisq)`[2]"
+"0","JointHypothesis <- c(P.ValueM3LH,P.ValueM4LH,P.ValueM5LH,P.ValueM6LH,P.ValueM6LH.1)"
+"0","JointHypothesis <- t(as.matrix(JointHypothesis))"
+"0","rownames(JointHypothesis) <- 'Joint Hypothesis Tests (P-Values)'"
+"0","colnames(JointHypothesis) <- c('Model 3','Model 4','Model 5','Model 6', 'Model 6.1')"
+"0","M6Forecast <- forecast(M6, xreg = xReg4[c(1:12),])"

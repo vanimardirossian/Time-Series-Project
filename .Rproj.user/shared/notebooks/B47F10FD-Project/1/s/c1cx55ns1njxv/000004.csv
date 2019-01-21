@@ -1,0 +1,3 @@
+"0","dfBIC <- as.data.frame(matrixBIC)"
+"0","BIC_AR <- dfBIC[dfBIC[,2]==0 & dfBIC[,3]==0,]"
+"0","print(BIC_AR)"

@@ -1,0 +1,2 @@
+"0","C.Values <- PartnerDFCval"
+"0","kable(rbind(C.Values, Partner.Stat))"

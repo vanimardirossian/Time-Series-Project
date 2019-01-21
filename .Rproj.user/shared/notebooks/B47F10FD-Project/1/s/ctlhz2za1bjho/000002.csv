@@ -1,0 +1,5 @@
+"0","font_import(pattern = 'lmodern*', prompt = FALSE, paths = '/home/vani/Documents/AUA/Special Topics/Group Project')
+"
+"2","Error in font_import(pattern = ""lmodern*"", prompt = FALSE, paths = ""/home/vani/Documents/AUA/Special Topics/Group Project"") : 
+  could not find function ""font_import""
+"

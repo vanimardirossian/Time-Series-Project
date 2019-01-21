@@ -1,0 +1,5 @@
+"0","forCorr <- data[,c('Armenia','Russia','PartnerGDP','CrudeOilGrowth','NaturalGasGrowth')]
+"
+"2","Error in `[.data.frame`(data, , c(""Armenia"", ""Russia"", ""PartnerGDP"", ""CrudeOilGrowth"",  : 
+  undefined columns selected
+"

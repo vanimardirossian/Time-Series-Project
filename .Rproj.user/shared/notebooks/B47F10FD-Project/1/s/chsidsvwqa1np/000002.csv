@@ -1,0 +1,17 @@
+"0","orderAIC <- matrix(0, nrow = 3, ncol = 4 * 2 * 4)"
+"0","orderBIC <- matrix(0, nrow = 3, ncol = 4 * 2 * 4)"
+"0","AIC <- numeric(4 * 2 * 4)"
+"0","BIC <- numeric(4 * 2 * 4)"
+"0","k <- 1"
+"0","for (p in 1:4) for (d in 0:1) for (q in 1:4) {"
+"0","  orderAIC[, k] <- c(p,d,q)"
+"0","  AIC[k] <- AIC(arima(ArmTS, order=c(p, d, q)))"
+"0","  "
+"0","  orderBIC[, k] <- c(p,d,q)"
+"0","  BIC[k] <- BIC(arima(ArmTS, order=c(p,d,q)))"
+"0","  "
+"0","  k <- k+1"
+"0","}"
+"2","Error in arima(ArmTS, order = c(p, d, q)) : 
+  non-stationary AR part from CSS
+"

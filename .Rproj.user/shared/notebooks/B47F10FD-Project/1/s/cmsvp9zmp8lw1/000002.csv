@@ -1,0 +1,3 @@
+"0","M3LH <- linearHypothesis(M3, c('PartnerTS=0','GasTS=0'))"
+"0","M4LH <- linearHypothesis(M4, c('PartnerTS=0','OilTS=0'))"
+"0","M5LH <- linearHypothesis(M5, c('PartnerTS=0','OilTS=0','GasTS=0'))"

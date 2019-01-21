@@ -1,0 +1,144 @@
+"0","library(readr)"
+"0","library(readxl)"
+"0","library(tseries)"
+"2","
+    ‘tseries’ version: 0.10-46
+
+    ‘tseries’ is a package for time series analysis and computational finance.
+
+    See ‘library(help=""tseries"")’ for details.
+
+"
+"0","library(ggplot2)"
+"0","library(reshape)"
+"0","library(astsa)"
+"0","library(caschrono)"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"0","library(forecast)"
+"2","
+Attaching package: ‘forecast’
+
+"
+"2","The following object is masked from ‘package:astsa’:
+
+    gas
+
+"
+"0","library(urca)"
+"0","library(car)"
+"2","Loading required package: carData
+"
+"0","library(knitr)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    recode
+
+"
+"2","The following object is masked from ‘package:reshape’:
+
+    rename
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(pastecs)"
+"2","
+Attaching package: ‘pastecs’
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    first, last
+
+"
+"0","library(knitr)"
+"0","options(scipen = 999)"
+"0","data<-read.csv(""Data.csv"")"
+"0","data <- data[,c(2,18,21,22,23)]"
+"0","StatTable<- stat.desc(data)"
+"0","data$Armenia <- log(data$Armenia/lag(data$Armenia,n=4))"
+"0","data$Russia <- log(data$Russia/lag(data$Russia, n=4))"
+"0","data$PartnerGDP <- log(data$PartnerGDP/lag(data$PartnerGDP, n=4))"
+"0","data$CrudeOil <- log(data$CrudeOil/lag(data$CrudeOil, n=4))"
+"0","data$NaturalGas <- log(data$NaturalGas/lag(data$NaturalGas, n=4))"
+"0","data <- data[-c(1:4),]"
+"0","DataTS <- ts(data)"
+"0","forCorr <- data[,c('Armenia','Russia','PartnerGDP','CrudeOil','NaturalGas')]"
+"0","CorrMatrix<-cor(forCorr)"
+"0","ArmTS <- ts(data$Armenia, start = 2000, frequency = 4)"
+"0","RusTS <- ts(data$Russia, start = 2000, frequency = 4)"
+"0","PartnerTS <- ts(data$PartnerGDP, start = 2000, frequency = 4)"
+"0","OilTS <- ts(data$CrudeOil, start = 2000, frequency = 4)"
+"0","GasTS <- ts(data$NaturalGas, start = 2000, frequency = 4)"
+"0","ArmDF <-ur.df(ArmTS, type = 'trend')"
+"0","ArmDFCval <- t(ArmDF@cval)[2,]"
+"0","Arm.Stat <- ArmDF@teststat"
+"0","rownames(Arm.Stat) <- 'Armenia Test Statistic'"
+"0","PartnerDF <-ur.df(PartnerTS, type = 'drift')"
+"0","PartnerDFCval <- t(PartnerDF@cval)[2,]"
+"0","Partner.Stat <- PartnerDF@teststat"
+"0","rownames(Partner.Stat) <- 'Partner Test Statistic'"
+"0","OilDF <-ur.df(OilTS, type = 'trend')"
+"0","OilDFCval <- t(OilDF@cval)[2,]"
+"0","Oil.Stat <- OilDF@teststat"
+"0","rownames(Oil.Stat) <- 'Oil Test Statistic'"
+"0","GasDF <-ur.df(GasTS, type = 'trend')"
+"0","GasDFCval <- t(GasDF@cval)[2,]"
+"0","Gas.Stat <- GasDF@teststat"
+"0","rownames(Gas.Stat) <- 'Gas Test Statistic'"
+"0","ArmDFL2 <-ur.df(ArmTS, lags = 2, type = 'trend')"
+"0","ArmDFCvalL2 <- t(ArmDFL2@cval)[2,]"
+"0","Arm.StatL2 <- ArmDFL2@teststat"
+"0","rownames(Arm.StatL2) <- 'Armenia Test Statistic (Lag 2)'"
+"0","xReg1<-matrix(c(PartnerTS,OilTS),ncol=2,byrow = F, dimnames = list(1:68,c('PartnerTS','GasTS')))"
+"0","xReg2<-matrix(c(PartnerTS,OilTS),ncol=2,byrow = F, dimnames = list(1:68,c('PartnerTS','OilTS')))"
+"0","xReg3<-matrix(c(PartnerTS,OilTS,GasTS),ncol=3,byrow = F, dimnames = list(1:68,c('PartnerTS','OilTS','GasTS')))"
+"0","M1<-arima(ArmTS, order=c(2,0,1))"
+"0","M1SW <- shapiro.test(M1$residuals)"
+"0","P.ValueM1 <- M1SW$p.value"
+"0","M2<-arima(ArmTS, order=c(2,0,3), xreg = PartnerTS)"
+"0","M2SW <- shapiro.test(M2$residuals)"
+"0","P.ValueM2 <- M2SW$p.value"
+"0","M3<-arima(ArmTS, order=c(2,0,1), xreg = xReg1)"
+"0","M3SW <- shapiro.test(M3$residuals)"
+"0","P.ValueM3 <- M3SW$p.value"
+"0","M4<-arima(ArmTS, order=c(2,0,1), xreg = xReg2)"
+"0","M4SW <- shapiro.test(M4$residuals)"
+"0","P.ValueM4 <- M4SW$p.value"
+"0","M5<-arima(ArmTS, order=c(2,0,3), xreg = xReg3)"
+"0","M5SW <- shapiro.test(M5$residuals)"
+"0","P.ValueM5 <- M5SW$p.value"
+"0","M3LH <- linearHypothesis(M3, c('PartnerTS=0','GasTS=0'))"
+"0","M4LH <- linearHypothesis(M4, c('PartnerTS=0','OilTS=0'))"
+"0","M5LH <- linearHypothesis(M5, c('PartnerTS=0','OilTS=0','GasTS=0'))"
+"0","P.ValueM3LH <- M3LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM4LH <- M4LH$`Pr(>Chisq)`[2]"
+"0","P.ValueM5LH <- M5LH$`Pr(>Chisq)`[2]"
+"0","JointHypothesis <- c(P.ValueM3LH,P.ValueM4LH,P.ValueM5LH)"
+"0","JointHypothesis <- t(as.matrix(JointHypothesis))"
+"0","rownames(JointHypothesis) <- 'Joint Hypothesis Tests (P-Values)'"
+"0","colnames(JointHypothesis) <- c('Model 3','Model 4','Model 5')"
+"0","M5Forecast <- forecast(M5, xreg = xReg3[c(1:12),])"

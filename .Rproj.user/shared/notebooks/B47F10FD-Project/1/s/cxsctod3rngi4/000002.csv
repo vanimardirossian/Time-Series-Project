@@ -1,0 +1,77 @@
+"0","library(readr)"
+"0","library(readxl)"
+"0","library(tseries)"
+"2","
+    ‘tseries’ version: 0.10-46
+
+    ‘tseries’ is a package for time series analysis and computational finance.
+
+    See ‘library(help=""tseries"")’ for details.
+
+"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(ggplot2)"
+"0","library(reshape)"
+"2","
+Attaching package: ‘reshape’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    rename
+
+"
+"0","library(astsa)"
+"0","library(forecast)"
+"2","
+Attaching package: ‘forecast’
+
+"
+"2","The following object is masked from ‘package:astsa’:
+
+    gas
+
+"
+"0","library(dygraphs)"
+"0","library(lubridate)"
+"2","
+Attaching package: ‘lubridate’
+
+"
+"2","The following object is masked from ‘package:reshape’:
+
+    stamp
+
+"
+"2","The following object is masked from ‘package:base’:
+
+    date
+
+"
+"0","library(stringr)"
+"0","library(purrr)"
+"0","library(tidyr)"
+"2","
+Attaching package: ‘tidyr’
+
+"
+"2","The following objects are masked from ‘package:reshape’:
+
+    expand, smiths
+
+"
+"0","data<-read.csv(""Data.csv"")"

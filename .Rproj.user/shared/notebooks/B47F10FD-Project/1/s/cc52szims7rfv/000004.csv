@@ -1,0 +1,4 @@
+"0","data$Fitted <- data$Armenia - M6$residuals"
+"0","FittedTS <- ts(data$Fitted, start = 2000, frequency = 4)"
+"0","par(family = ""LM Roman 10"")"
+"0","ts.plot(ArmTS, FittedTS, main = 'Actual vs Fitted Armenian GDP',gpars = list(col = c(""black"", ""lightslategray"")))"

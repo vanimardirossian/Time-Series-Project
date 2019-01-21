@@ -1,0 +1,87 @@
+"0","library(readr)
+library(readxl)
+library(tseries)
+"
+"2","
+    ‘tseries’ version: 0.10-46
+
+    ‘tseries’ is a package for time series analysis and computational finance.
+
+    See ‘library(help=""tseries"")’ for details.
+
+"
+"0","library(ggplot2)"
+"0","library(reshape)"
+"0","library(astsa)"
+"0","library(forecast)"
+"2","
+Attaching package: ‘forecast’
+
+"
+"2","The following object is masked from ‘package:astsa’:
+
+    gas
+
+"
+"0","library(caschrono)"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"0","library(stargazer)"
+"2","
+Please cite as: 
+
+"
+"2"," Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+"
+"2"," R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+"
+"0","library(urca)"
+"0","library(car)"
+"2","Loading required package: carData
+"
+"0","library(knitr)"
+"0","library(dplyr)"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    recode
+
+"
+"2","The following object is masked from ‘package:reshape’:
+
+    rename
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(pastecs)"
+"2","
+Attaching package: ‘pastecs’
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    first, last
+
+"

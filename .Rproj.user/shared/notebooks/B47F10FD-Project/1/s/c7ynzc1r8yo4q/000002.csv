@@ -1,0 +1,3 @@
+"0","dfAIC <- as.data.frame(matrixAIC)"
+"0","AIC_AR <- dfAIC[dfAIC[,2]==0 & dfAIC[,3]==0,]"
+"0","print(AIC_AR)"

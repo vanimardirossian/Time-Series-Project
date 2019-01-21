@@ -1,0 +1,85 @@
+# orderAIC <- matrix(0, nrow = 2, ncol = 4 * 4)
+# orderBIC <- matrix(0, nrow = 2, ncol = 4 * 4)
+# AIC <- numeric(4 * 4)
+# BIC <- numeric(4 * 4)
+# k <- 1
+# 
+# for (p in 1:4) for (q in 1:4) {
+#   orderAIC[, k] <- c(p,q)
+#   AIC[k] <- AIC(arima(ArmTS, order=c(p, 0, q)))
+#   
+#   orderBIC[, k] <- c(p,q)
+#   BIC[k] <- BIC(arima(ArmTS, order=c(p,0,q)))
+#   
+#   k <- k+1
+# }
+# 
+# 
+# indicesAIC <- order(AIC, decreasing = TRUE)
+# AIC <- AIC[indicesAIC]
+# orderAIC <- orderAIC[,indicesAIC]
+# 
+# orderAIC <- t(orderAIC)
+# matrixAIC <- cbind(orderAIC, AIC)
+# colnames(matrixAIC) <- c("p", "q", "AIC")
+# 
+# indicesBIC <- order(BIC, decreasing = TRUE)
+# BIC <- BIC[indicesBIC]
+# orderBIC <- orderBIC[,indicesBIC]
+# 
+# orderBIC <- t(orderBIC)
+# matrixBIC <- cbind(orderBIC, BIC)
+# colnames(matrixBIC) <- c("p", "q", "BIC")
+# 
+# kable(matrixAIC[1:2,])
+# kable(matrixBIC[1:2,])
+# 
+# 
+# library(extrafont)
+# par(family = "LM Roman 10")
+# plot(GasTS, main = 'Natural Gas Prices in Natural Logs', ylab= 'Gas Prices')
+# plot(decompose(ArmTS))
+# plot(decompose(RusTS))
+# plot(stl(ArmTS, s.window = 'periodic'), main = 'Seasonal, Trend, and Irregular Component of the Armenian GDP')
+# 
+# plot(stl(RusTS, s.window = 'periodic'), main = 'Seasonal, Trend, and Irregular Component of the Russian GDP')
+# 
+# 
+# 
+# library(extrafont)
+# par(family = "LM Roman 10")
+# plot(RemittancesTS, main = 'Remittances in Natural Logs', ylab='Remittances')
+# 
+# 
+# 
+# RemDF <-ur.df(GasTS, type = 'trend')
+# RemDFCval <- t(RemDF@cval)[2,]
+# Rem.Stat <- RemDF@teststat
+# rownames(Rem.Stat) <- 'Remittances Test Statistic'
+# kable(rbind(C.Values, Rem.Stat))
+# 
+# 
+# M6<-arima(ArmTS, order=c(2,0,2), xreg = xReg4)
+# M6SW <- shapiro.test(M6$residuals)
+# P.ValueM6 <- M6SW$p.value
+# 
+# library(stargazer)
+# stargazer(M6, out = 'tb.txt')
+# 
+# 
+# 
+# M6LH <- linearHypothesis(M6, c('PartnerTS=0','OilTS=0','GasTS=0', 'RemittancesTS=0'))
+# 
+# 
+# library(extrafont)
+# data <- read.csv('Data.csv')
+# 
+# font_import(pattern = 'lmodern*', prompt = FALSE, paths = '/home/vani/Documents/AUA/Special Topics/Group Project')
+# 
+# loadfonts(device = "pdf")
+# par(family = "LM Roman 10")
+# plot(data$Armenia, type = 'l')
+
+
+library(stargazer)
+stargazer(M1, M2, M3, M4, M6, M6, out = 'Reg.html', title = 'ARIMA/ARIMAX Output', dep.var.labels = 'Armenian GDP',covariate.labels = c('AR(1)','AR(2)','AR(3)','MA(1)','MA(2)','MA(3)','Intercept','Partner GDP', 'Natural Gas Prices', 'Armenian Inward Remittances', 'Crude Oil Prices'))
